@@ -89,7 +89,7 @@ function setupSelector(value) {
 
 function openCompactView() {
   BynderCompactView.open({
-    defaultDomain: config.bynderUrl.replace("subdomain.domain.com","emakinaceedemo.getbynder.com"),
+    defaultDomain: config.bynderUrl,
     mode: "MultiSelect",
     assetTypes: ["image"],
     onSuccess: function (selectedAssets) {
