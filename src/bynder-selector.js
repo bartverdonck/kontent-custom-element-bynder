@@ -78,7 +78,7 @@ function imageTile($parent, item, remove) {
 
 function setupSelector(value) {  
   if (value) {
-    currentValue = JSON.parse(value);
+    currentValue = JSON.parse(value.replace("subdomain.domain.com","emakinaceedemo.getbynder.com"));
     renderSelected(currentValue);
   }
   else {
@@ -90,7 +90,7 @@ function openCompactView() {
   CustomElement.setHeight(800);
   
   BynderCompactView.open({
-    defaultDomain: config.bynderUrl,
+    defaultDomain: config.bynderUrl.replace("subdomain.domain.com","emakinaceedemo.getbynder.com"),
     mode: "MultiSelect",
     assetTypes: ["image"],
     onSuccess: function (selectedAssets) {
