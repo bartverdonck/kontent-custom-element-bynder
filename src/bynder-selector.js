@@ -88,16 +88,11 @@ function setupSelector(value) {
 }
 
 function openCompactView() {
-  console.log()
   BynderCompactView.open({
     defaultDomain: config.bynderUrl.replace("subdomain.domain.com","emakinaceedemo.getbynder.com"),
     mode: "MultiSelect",
     assetTypes: ["image"],
     onSuccess: function (selectedAssets) {
-      $("img").each(function(){
-        console.log("hallo tris")
-        console.log($(this))
-      });
       let images = currentValue || [];
       for (const asset of selectedAssets) {
         switch (asset.type) {
@@ -121,14 +116,6 @@ function openCompactView() {
       updateValue(images);
       updateSize();
     }
-  })
-  $(this).closest("body").find("img").each(function(){
-    console.log("hallo")
-    console.log($(this))
-  })
-  $("img").each(function(){
-    console.log("hallo bis")
-    console.log($(this))
   })
 }
 
