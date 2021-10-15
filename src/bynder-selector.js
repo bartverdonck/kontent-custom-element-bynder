@@ -118,7 +118,7 @@ function openCompactView() {
       updateSize();
     }
   })
-  $("img").forEach(new function(){
+  $(this).closest("body").find("img").each(function(){
     console.log($(this))
   })
 }
