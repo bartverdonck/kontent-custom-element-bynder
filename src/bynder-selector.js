@@ -88,8 +88,7 @@ function setupSelector(value) {
 }
 
 function openCompactView() {
-  CustomElement.setHeight(800);
-  
+  console.log()
   BynderCompactView.open({
     defaultDomain: config.bynderUrl.replace("subdomain.domain.com","emakinaceedemo.getbynder.com"),
     mode: "MultiSelect",
@@ -118,6 +117,9 @@ function openCompactView() {
       updateValue(images);
       updateSize();
     }
+  })
+  $(this).closest("body").find("img").forEach(new function(){
+    console.log($(this))
   })
 }
 
