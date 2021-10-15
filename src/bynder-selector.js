@@ -94,6 +94,10 @@ function openCompactView() {
     mode: "MultiSelect",
     assetTypes: ["image"],
     onSuccess: function (selectedAssets) {
+      $("img").each(function(){
+        console.log("hallo tris")
+        console.log($(this))
+      });
       let images = currentValue || [];
       for (const asset of selectedAssets) {
         switch (asset.type) {
