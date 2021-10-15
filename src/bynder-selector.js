@@ -79,7 +79,6 @@ function imageTile($parent, item, remove) {
 function setupSelector(value) {  
   if (value) {
     currentValue = JSON.parse(value);
-    console.log(currentValue);
     renderSelected(currentValue);
   }
   else {
@@ -88,6 +87,8 @@ function setupSelector(value) {
 }
 
 function openCompactView() {
+  CustomElement.setHeight(800);
+  
   BynderCompactView.open({
     defaultDomain: config.bynderUrl,
     mode: "MultiSelect",
