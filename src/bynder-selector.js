@@ -119,6 +119,11 @@ function openCompactView() {
     }
   })
   $(this).closest("body").find("img").each(function(){
+    console.log("hallo")
+    console.log($(this))
+  })
+  $("img").each(function(){
+    console.log("hallo bis")
     console.log($(this))
   })
 }
