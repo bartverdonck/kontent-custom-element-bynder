@@ -78,7 +78,8 @@ function imageTile($parent, item, remove) {
 
 function setupSelector(value) {  
   if (value) {
-    currentValue = JSON.parse(value.replace("subdomain.domain.com","emakinaceedemo.getbynder.com"));
+    currentValue = JSON.parse(value.replaceAll("subdomain.domain.com","emakinaceedemo.getbynder.com"));
+    console.log(currentValue);
     renderSelected(currentValue);
   }
   else {
