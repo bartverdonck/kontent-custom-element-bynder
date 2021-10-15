@@ -60,13 +60,13 @@ function imageTile($parent, item, remove) {
   const $actions = $('<div class="asset-thumbnail__actions-pane"></div>').appendTo($tileInside);
 
   if (item.webUrl) {
-    $(`<a class="action" title="Download" href="${item.webUrl}" target="_blank"><i class="icon-arrow-down-line"></i></a>`).appendTo($actions);
+    $(`<a class="action" title="Download" href="${item.webUrl.replace("subdomain.domain.com","emakinaceedemo.getbynder.com")}" target="_blank"><i class="icon-arrow-down-line"></i></a>`).appendTo($actions);
   }
 
   $(`<a class="remove" title="Remove"><i class="icon-times"></i></a>`).appendTo($actions).click(function () {remove(item.id);});
 
   if (item.previewUrl) {
-    $(`<a href="${item.bynderUrl}" target="_blank"><img class="asset-thumbnail__image" src="${item.previewUrl}" /></a>`).appendTo($tileInside).on('load', updateSize);
+    $(`<a href="${item.bynderUrl}" target="_blank"><img class="asset-thumbnail__image" src="${item.previewUrl.replace("subdomain.domain.com","emakinaceedemo.getbynder.com")}" /></a>`).appendTo($tileInside).on('load', updateSize);
   }
 
   else {
@@ -104,11 +104,11 @@ function openCompactView() {
               id: asset.id,
               databaseId: asset.databaseId,
               name: asset.name,
-              bynderUrl: 'bart',
+              bynderUrl: asset.url.replace("subdomain.domain.com","emakinaceedemo.getbynder.com"),
               updatedAt: asset.updatedAt,
               description: asset.description,
-              previewUrl: asset.derivatives[config.previewDerivative || 'thumbnail'],
-              webUrl: asset.derivatives[config.webDerivative || "webImage"],
+              previewUrl: asset.derivatives[config.previewDerivative || 'thumbnail'].replace("subdomain.domain.com","emakinaceedemo.getbynder.com"),
+              webUrl: asset.derivatives[config.webDerivative || "webImage"].replace("subdomain.domain.com","emakinaceedemo.getbynder.com"),
               files: asset.files
             });
             break;
