@@ -104,7 +104,7 @@ function openCompactView() {
               id: asset.id,
               databaseId: asset.databaseId,
               name: asset.name,
-              bynderUrl: asset.url,
+              bynderUrl: 'bart',
               updatedAt: asset.updatedAt,
               description: asset.description,
               previewUrl: asset.derivatives[config.previewDerivative || 'thumbnail'],
